@@ -6,7 +6,7 @@ This hook **must** be used before the observed agent sends the A2A-compliant mes
 #### 2. Method
 `tasks/pushNotificationConfig/get`
 
-#### 6.3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |
@@ -106,7 +106,7 @@ This hook **must** be used before the observed agent processes the A2A-compliant
 #### 2. Method
 `tasks/pushNotificationConfig/get`
 
-#### 6.3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |
