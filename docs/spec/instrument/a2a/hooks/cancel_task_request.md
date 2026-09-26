@@ -6,7 +6,7 @@ This hook **must** be used before the observed agent sends the A2A-compliant mes
 #### 2. Method
 `tasks/cancel`
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |
@@ -99,7 +99,7 @@ This hook **must** be used before the observed agent receives the A2A-compliant 
 #### 2. Method
 `tasks/cancel`
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |

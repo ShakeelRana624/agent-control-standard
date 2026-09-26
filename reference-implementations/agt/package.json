@@ -19,6 +19,7 @@
   "devDependencies": {
     "bun-types": "^1.3.14",
     "typescript": "^7.0.2",
+    "yaml": "^2.7.0",
     "host-adapter": "workspace:*",
     "guardian": "workspace:*"
   }

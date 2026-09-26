@@ -43,6 +43,7 @@
  */
 import { describe, expect, it } from "bun:test";
 import { readFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import { POLICY_TARGET_LEAF } from "../packages/guardian/src/assemble-snapshot.ts";
 
 type ManifestPoint = { policy_target?: string; policy_target_kind?: string };
@@ -60,8 +61,8 @@ type Manifest = {
   tools: Record<string, unknown>;
 };
 
-const manifest = Bun.YAML.parse(readFileSync("policy/manifest.yaml", "utf8")) as Manifest;
-const mapping = Bun.YAML.parse(readFileSync("mapping.yaml", "utf8")) as Mapping;
+const manifest = parseYaml(readFileSync("policy/manifest.yaml", "utf8")) as Manifest;
+const mapping = parseYaml(readFileSync("mapping.yaml", "utf8")) as Mapping;
 
 /**
  * The ACS-side address of the leaf an AGT `policy_target` names.

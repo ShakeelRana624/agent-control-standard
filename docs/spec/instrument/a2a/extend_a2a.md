@@ -24,9 +24,9 @@ Observed agent can be either [client agent](https://google-a2a.github.io/A2A/lat
 3. The guardian agent understands and processes the A2A transported message and send the result back to client agent **A**.
 4. Client agent **A** interprets and enforces the response from guardian agent.
 5. In case response is `allow`, agent **A** sends the A2A message to server agent **B**.
-6. Server agent **B** uses ACS as a transport to send the recived message to the guardian agent (hook #2 in the diagram).
+6. Server agent **B** uses ACS as a transport to send the received message to the guardian agent (hook #2 in the diagram).
 7. In case response is `allow`, agent **B** processes the message and prepares A2A-compliant response.
-8. Server agent **B** uses ACS as a transport to send the reponse to the guardian agent (hook #3 in the diagram).
+8. Server agent **B** uses ACS as a transport to send the response to the guardian agent (hook #3 in the diagram).
 9. The guardian agent understands and processes the A2A transported response and send the result back to the server agent **B**.
 10. Server agent **B** interprets and enforces the response from guardian agent.
 11. In case response is `allow`, agent **B** sends the A2A response to client agent **A**. 
@@ -48,7 +48,7 @@ Observed agent can be either [client agent](https://google-a2a.github.io/A2A/lat
 
 
 ## ACS in action Examples
-### Scenario: An Observed client Agent **A** asks sever agent **B** a question and guardian agent respond with allow
+### Scenario: An Observed client Agent **A** asks server agent **B** a question and guardian agent responds with allow
 
 #### 1. Client agent **A** prepares A2A `message/send` message 
    ```json
@@ -137,7 +137,7 @@ Observed agent can be either [client agent](https://google-a2a.github.io/A2A/lat
     }
    ```
 
-### Scenario: An Observed client Agent shares PII and sensitive information with agent **B** and guardian agent respond with modified content
+### Scenario: An Observed client Agent shares PII and sensitive information with agent **B** and guardian agent responds with modified content
 
 #### 1. Client agent **A** prepares A2A `message/send` message with sensitive info
    ```json
@@ -337,7 +337,7 @@ Observed agent can be either [client agent](https://google-a2a.github.io/A2A/lat
    ```
 
 
-### Scenario: An Observed client Agent **A** sends disallowed content and guardian agent respond with `deny`
+### Scenario: An Observed client Agent **A** sends disallowed content and guardian agent responds with `deny`
 
 #### 1. Client agent **A** prepares `message/send` with disallowed content
    ```json

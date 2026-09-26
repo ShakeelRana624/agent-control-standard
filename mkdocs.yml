@@ -81,7 +81,15 @@ nav:
       - Supported Hooks: spec/instrument/hooks.md
       - ACS specification: spec/instrument/specification.md
       - Instrument MCP: spec/instrument/extend_mcp.md
-      - Instrument A2A: spec/instrument/a2a/extend_a2a.md
+      - Instrument A2A:
+        - Overview: spec/instrument/a2a/extend_a2a.md
+        - Send Message Request: spec/instrument/a2a/hooks/send_message_request.md
+        - Stream Message Request: spec/instrument/a2a/hooks/stream_message_request.md
+        - Cancel Task Request: spec/instrument/a2a/hooks/cancel_task_request.md
+        - Get Task Request: spec/instrument/a2a/hooks/get_task_request.md
+        - Get Task Push Notification Config Request: spec/instrument/a2a/hooks/get_task_push_notification_config_request.md
+        - Set Task Push Notification Config Request: spec/instrument/a2a/hooks/set_task_push_notification_config_request.md
+        - Resubscribe To Task Request: spec/instrument/a2a/hooks/resubscribe_to_task_request.md
     - Trace:
       - Overview: spec/trace/README.md
       - Supported Events: spec/trace/events.md

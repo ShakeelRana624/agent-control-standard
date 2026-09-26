@@ -1,13 +1,13 @@
 ### Stream Message Request (Client)
 #### 1. Description
-This hook is called when the observed client agent sends a message to server agent to initiate a new interaction or to continue an existing one AND subsribes to real-time updates for the task through A2A protocol.<br>
+This hook is called when the observed client agent sends a message to server agent to initiate a new interaction or to continue an existing one AND subscribes to real-time updates for the task through A2A protocol.<br>
 This hook **must** be used before the observed agent sends the A2A-compliant message to server agent.
 
 #### 2. Method
 `message/stream`
 
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |
@@ -146,7 +146,7 @@ This hook **must** be used before the observed agent processes the A2A-compliant
 `message/stream`
 
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |

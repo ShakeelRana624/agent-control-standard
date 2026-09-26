@@ -1,17 +1,17 @@
 ### Resubscribe To Task Request (Client)
 #### 1. Description
-This hook is called when the observed client agent resubscirbes to server agent's notifications for delegated task updates through A2A protocol.<br>
+This hook is called when the observed client agent resubscribes to server agent's notifications for delegated task updates through A2A protocol.<br>
 This hook **must** be used before the observed agent sends the A2A-compliant message to server agent.
 
 #### 2. Method
 `tasks/resubscribe`
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |
 | :--------- | :---------- |
-| `allow` | The observed agent should send the A2A-compliant message to the target agent and resubsribe to the task. |
+| `allow` | The observed agent should send the A2A-compliant message to the target agent and resubscribe to the task. |
 | `deny` | The A2A-compliant set config message should be blocked and not sent to the server agent. |
 
 #### 4. A2A payload
@@ -99,7 +99,7 @@ This hook **must** be used before the observed agent processes the A2A-compliant
 #### 2. Method
 `tasks/resubscribe`
 
-#### 3. Reponse
+#### 3. Response
 The response is an [response envelope](../../specification.md#6-disposition-vocabulary) object.
 
 | Decision | Behavior |

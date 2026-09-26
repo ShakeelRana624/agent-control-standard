@@ -11,6 +11,7 @@
  */
 import { createHash, randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import { resolvePath } from "./hookmap-path.ts";
 
 /**
@@ -571,7 +572,7 @@ function normalizeTools(hookmap: Hookmap): Hookmap {
  * the key omitted instead -- see normalizeTools, run last, once every check
  * above has passed. */
 export function loadHookmap(path: string): Hookmap {
-  const hookmap = Bun.YAML.parse(readFileSync(path, "utf8")) as Hookmap;
+  const hookmap = parseYaml(readFileSync(path, "utf8")) as Hookmap;
   assertRenderableDecisions(hookmap, path);
   assertMirrorsWellFormed(hookmap, path);
   assertToolsWellFormed(hookmap, path);
