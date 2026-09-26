@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 // The deployment subpath, not the barrel: the barrel is the governance verbs,
 // and this is how the deployment builds a bridge. This watch validates the
 // document the shipped deployment sends AGT, so it has to send the document
@@ -35,7 +36,7 @@ const HOOKMAP_PATHS = ["hosts/claude-code/claude-code.hookmap.yaml", "hosts/open
  */
 function readHookmapTools(path: string): { path: string; hooks: Record<string, { tools?: unknown }> } {
   try {
-    const raw = Bun.YAML.parse(readFileSync(path, "utf8")) as { hooks?: Record<string, { tools?: unknown }> };
+    const raw = parseYaml(readFileSync(path, "utf8")) as { hooks?: Record<string, { tools?: unknown }> };
     return { path, hooks: raw.hooks ?? {} };
   } catch (error) {
     throw new Error(`${path}: ${(error as Error).message}`);
@@ -49,7 +50,7 @@ function readHookmapTools(path: string): { path: string; hooks: Record<string, {
  * reason `readHookmapTools` does. */
 function readManifestToolRegistry(path: string): string[] {
   try {
-    const raw = Bun.YAML.parse(readFileSync(path, "utf8")) as { tools?: Record<string, unknown> };
+    const raw = parseYaml(readFileSync(path, "utf8")) as { tools?: Record<string, unknown> };
     return Object.keys(raw.tools ?? {});
   } catch (error) {
     throw new Error(`${path}: ${(error as Error).message}`);

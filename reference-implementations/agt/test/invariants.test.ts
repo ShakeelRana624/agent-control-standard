@@ -15,6 +15,7 @@ import {
 // package's barrel.
 import { resolveModify } from "../packages/host-adapter/src/decision-modify.ts";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Glob } from "bun";
@@ -453,7 +454,7 @@ describe("architectural invariants", () => {
     // while asserting about no gate at all, which is worse than no gate.
     expect({ shim: SHIM, foundGates: dishonestGates.length > 0 }).toEqual({ shim: SHIM, foundGates: true });
 
-    const hookmap = Bun.YAML.parse(readFileSync(HOOKMAP, "utf8")) as {
+    const hookmap = parseYaml(readFileSync(HOOKMAP, "utf8")) as {
       hooks?: Record<string, { tools?: unknown } | undefined>;
     };
     const declared = dishonestGates.map((hookEventName) => ({

@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import type { AgtVerdict } from "agt-bridge";
 
 export type AcsModifications = {
@@ -130,7 +131,7 @@ export type Mapping = {
 };
 
 export function loadMapping(path: string): Mapping {
-  return Bun.YAML.parse(readFileSync(path, "utf8")) as Mapping;
+  return parseYaml(readFileSync(path, "utf8")) as Mapping;
 }
 
 /**

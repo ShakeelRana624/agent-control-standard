@@ -1,6 +1,5 @@
 {
   "lockfileVersion": 1,
-  "configVersion": 1,
   "workspaces": {
     "": {
       "name": "acs-reference-implementation",
@@ -12,6 +11,7 @@
         "guardian": "workspace:*",
         "host-adapter": "workspace:*",
         "typescript": "^7.0.2",
+        "yaml": "^2.7.0",
       },
     },
     "hosts/claude-code": {
@@ -60,11 +60,15 @@
         "agt-bridge": "workspace:*",
         "ajv": "8.20.0",
         "ajv-formats": "3.0.1",
+        "yaml": "^2.7.0",
       },
     },
     "packages/host-adapter": {
       "name": "host-adapter",
       "version": "0.1.0",
+      "dependencies": {
+        "yaml": "^2.7.0",
+      },
       "devDependencies": {
         "guardian": "workspace:*",
       },

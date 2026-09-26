@@ -1,5 +1,6 @@
 import { afterEach, describe, expect, it } from "bun:test";
 import { existsSync, mkdtempSync, readFileSync, rmdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { parse as parseYaml } from "yaml";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -1014,7 +1015,7 @@ describe("acs-hook — the negotiated posture, end to end", () => {
   // declares no block fails here rather than at runtime -- which is exactly how
   // `ask` and `defer` went missing from this block in the first place.
   it("still loads the real hookmap: every value each hook declares is one Claude Code accepts at that event", async () => {
-    const declared = Bun.YAML.parse(readFileSync(REAL_HOOKMAP, "utf8")) as {
+    const declared = parseYaml(readFileSync(REAL_HOOKMAP, "utf8")) as {
       hooks: Record<string, { decisions?: Record<string, { output?: Record<string, { value?: unknown }> }> }>;
     };
 
